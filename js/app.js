@@ -23,20 +23,23 @@ Enemy.prototype.update = function(dt) {
         this.x = -100;
         this.speed = 100 + Math.floor(Math.random() * 512);
     }
-
-    // Check for collision between player and enemies
-    if (player.x < this.x + 60 &&
-        player.x + 37 > this.x &&
-        player.y < this.y + 25 &&
-        30 + player.y > this.y) {
-        player.x = 200;
-        player.y = 380;
-}
+    this.checkCollisions();
 };
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
+// Check for collision between player and enemies
+Enemy.prototype.checkCollisions = function() {
+  if (player.x < this.x + 60 &&
+      player.x + 37 > this.x &&
+      player.y < this.y + 25 &&
+      30 + player.y > this.y) {
+      player.x = 200;
+      player.y = 380;
+}
 };
 
 // Now write your own player class
@@ -67,7 +70,7 @@ Player.prototype.update = function() {
         this.y = 380;
     }
 };
-// Draw the enemy on the screen
+// Draw the player on the screen
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };

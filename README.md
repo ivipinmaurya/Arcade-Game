@@ -3,7 +3,7 @@ Frontend Nanodegree Arcade Game
 
 How to Run?
 
-  1. To run the game, open the "index.html" file in your browser to run the game.
+  1. To run the game, open the "index.html" file in your browser.
 
 How to Play Arcade Game?
 
